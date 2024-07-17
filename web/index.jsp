@@ -12,5 +12,6 @@
   </head>
   <body>
 MVC 입니다
+  <a href="home.jsp">홈홈홈홈</a>
   </body>
 </html>

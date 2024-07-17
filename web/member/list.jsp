@@ -33,6 +33,8 @@
         <td><%=member.getEmail()%></td>
         <td><%=member.getAge()%></td>
         <td><%=member.getRegDate()%></td>
+        <td><a href="<%=request.getContextPath()%>/member/delete?id=<%=member.getId()%>">삭제</a></td>
+        <td><a href="<%=request.getContextPath()%>/member/update?id=<%=member.getId()%>">수정</a></td>
     </tr>
 <%
     }

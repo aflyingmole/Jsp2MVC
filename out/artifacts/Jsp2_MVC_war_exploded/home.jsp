@@ -13,8 +13,27 @@
 <body>
 
 <ul>
-    <li><a href="${pageContext.request.contextPath}/member/join">회원가입</a></li>
+    <%
+        if (session.getAttribute("id") == null) {
+    %>
+    <li><a href="${pageContext.request.contextPath}/member/join">가입</a></li>
+    <li><a href="${pageContext.request.contextPath}/member/login">회원로그인</a></li>
+    <%
+    } else {
+    %>
+    <li><a href="${pageContext.request.contextPath}/member/logout">회원로그아웃</a></li>
+
+    <%
+        }
+    %>
     <li><a href="${pageContext.request.contextPath}/member/list">회원목록</a></li>
+
 </ul>
 </body>
 </html>
+<%--    <c:choose>--%>
+<%--        <c:when test="${empty id}">--%>
+<%--        </c:when>--%>
+<%--        <c:otherwise>--%>
+<%--        </c:otherwise>--%>
+<%--    </c:choose>--%>

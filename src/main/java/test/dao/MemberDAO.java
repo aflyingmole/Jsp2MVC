@@ -12,17 +12,17 @@ import java.util.ArrayList;
 
 public class MemberDAO {
 
-    public int insert(Member vo) {
+    public int insert(Member member) {
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
             con = JdbcUtil.getCon();
             String sql = "insert into member values(?,?,?,?,sysdate)";
             pstmt = con.prepareStatement(sql);
-            pstmt.setString(1, vo.getId());
-            pstmt.setString(2, vo.getPwd());
-            pstmt.setString(3, vo.getEmail());
-            pstmt.setInt(4, vo.getAge());
+            pstmt.setString(1, member.getId());
+            pstmt.setString(2, member.getPwd());
+            pstmt.setString(3, member.getEmail());
+            pstmt.setInt(4, member.getAge());
             return pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println("[에러]" + e.getMessage());
